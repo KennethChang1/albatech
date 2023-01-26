@@ -13,6 +13,7 @@ a {
 }
 
 .nav {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,6 +34,16 @@ a {
   }
 }
 
+.nav-menu {
+  width: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+  .nav-menu {
+    display: none;
+  }
+}
+
 .nav-links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -44,7 +55,18 @@ a {
 
 @media only screen and (max-width: 600px) {
   .nav-links {
-    display: none;
+    z-index: 1;
+    position: absolute;
+    background-color: white;
+    bottom: -300px;
+    width: 100%;
+    left: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+    padding: 50px 0;
   }
 }
 
@@ -52,6 +74,26 @@ a {
   .nav-links {
     font-size: 14px;
     gap: 30px;
+  }
+}
+
+.nav-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  .logo {
+    width: 50px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .hideNav {
+    display: none;
   }
 }
 
@@ -86,6 +128,12 @@ a {
   margin-bottom: 120px;
   max-width: 1440px;
   margin: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    padding-top: 30px;
+  }
 }
 
 @media only screen and (max-width: 768px) {

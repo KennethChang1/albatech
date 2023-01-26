@@ -13,6 +13,7 @@ a{
 }
 
 .nav{
+    position: relative;
     display: flex;
     padding: 20px 140px;
     justify-content: space-between;
@@ -24,6 +25,13 @@ a{
         padding: 20px 5%;
     }
 
+    &-menu{
+        width: 20px;
+        @media only screen and (min-width: 768px){
+            display: none;
+        }
+    }
+
     &-links{
         display: flex;
         gap: 70px;
@@ -31,13 +39,41 @@ a{
         font-weight: 700;
 
         @media only screen and (max-width: 600px){
-            display: none;
+            z-index: 1;
+            position: absolute;
+            background-color: white;
+            bottom: -300px;
+            width: 100%;
+            left: 0;
+            flex-direction: column;
+            text-align: center;
+            padding: 50px 0;
         }
 
         @media only screen and (max-width: 768px){
             font-size: 14px;
             gap: 30px;
         }
+    }
+
+    &-container{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 1;
+    }
+}
+
+.logo{
+    @media only screen and (max-width: 600px){
+        width: 50px;
+    }
+}
+
+.hideNav{
+    @media only screen and (max-width: 600px){
+        display: none;
     }
 }
 
@@ -74,6 +110,10 @@ a{
     margin-bottom: 120px;
     max-width: 1440px;
     margin: auto;
+
+    @media only screen and (max-width: 600px){
+        padding-top: 30px;
+    }
 
     &__img{
         @media only screen and (max-width: 768px){
