@@ -38,7 +38,7 @@ const Login = ({setLogin, setData}) => {
                 <input type="password" name="pwd" id="pwd" autoComplete="on" onChange={(e) => setPwd(e.target.value)} required/>
             </div>
             <button className="btn">Login</button>
-            {error && <p>Email is incorrect, please try again.</p>}
+            {error && <p className="error">Email is incorrect, please try again.</p>}
         </form>
      );
 }
